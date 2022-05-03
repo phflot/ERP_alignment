@@ -26,7 +26,12 @@ for i = max_level:-1:1
         'Antialiasing', true);
 
     reg_filt = imgaussfiltaniso(f1_level, sigma);
-    ref_tmp = mean(img_reg, 1);
+    
+    if i == max_level
+        ref_tmp = reg_filt(1, :);
+    else
+        ref_tmp = mean(reg_filt, 1);
+    end
 
     [~, v_tmp] = align_lines(...
         reg_filt, ...
