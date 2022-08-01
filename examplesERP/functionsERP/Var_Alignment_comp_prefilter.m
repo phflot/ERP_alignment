@@ -81,7 +81,7 @@ as_r = 0.5;
 switch denoising
     case 'aniso'
         % filter with anisotropic gaussian
-        [reg_filt, ~] = imgaussfiltaniso( inputImage, 5, 15, true);
+        [reg_filt, ~] = imgaussfiltaniso( inputImage, 4);
     case 'aspr'
         % filter with amplitude and phase regularization
         reg_filt = ASPRdenoising(inputImage);
