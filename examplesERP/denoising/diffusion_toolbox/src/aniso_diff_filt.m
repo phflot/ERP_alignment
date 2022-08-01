@@ -131,6 +131,7 @@ end
 function [a, b, c] = get_diff_tensor(img, sigma, K, diffusivity)
 
     [dx, dy] = gradient(imgaussfilt(img, sigma));
+    dy = 0.15 * dy;
     grad_mag = sqrt(dx.^2 + dy.^2);
 
     v1_1 = dx ./ (grad_mag + 0.000001);

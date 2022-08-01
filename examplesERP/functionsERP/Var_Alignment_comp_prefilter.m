@@ -87,9 +87,12 @@ switch denoising
         reg_filt = ASPRdenoising(inputImage);
     case 'diffusion'
         % filter with anisotropic diffusion
-        options = get_aniso_diff_options();
+        options = get_aniso_coh_diff_options();
+        options.iterations = 200;
+%         options = get_aniso_diff_options();
         options.diffusivity = 'weickert';
-        reg_filt = aniso_diff_filt(inputImage, options);
+        reg_filt = aniso_coh_diff_filt(inputImage, options);
+%         reg_filt = aniso_diff_filt(inputImage, options);
     case 'wavelet'
         % filter with wavelet denoising
         reg_filt = wdenoise2(inputImage);
