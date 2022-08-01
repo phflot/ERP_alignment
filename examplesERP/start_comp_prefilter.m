@@ -20,13 +20,13 @@ Fs = 200;
 input = synth_ERP;
 
 % compare the different prefilter algorithms 
-[Reg_aniso,V_aniso, initial_denoising_aniso,initial_al] = Var_Alignment_comp_prefilter(input,method,nr_iter ,Fs,'aniso');
-[Reg_aspr,V_aspr, initial_denoising_aspr,~] = Var_Alignment_comp_prefilter(input,method,nr_iter ,Fs,'aspr');
-[Reg_diffusion,V_diffusion,initial_denoising_diffusion,~] = Var_Alignment_comp_prefilter(input,method,nr_iter ,Fs,'diffusion');
-[Reg_donoho,V_donoho, initial_denoising_donoho,~] = Var_Alignment_comp_prefilter(input,method,nr_iter ,Fs,'wavelet');
-[Reg_BM3D,V_BM3D, initial_denoising_BM3D,~] = Var_Alignment_comp_prefilter(input,method,nr_iter ,Fs,'BM3D');
-[Reg_nlm,V_nlm, initial_denoising_nlm,~] = Var_Alignment_comp_prefilter(input,method,nr_iter ,Fs,'nlm');
-[Reg_regu,V_regu, initial_denoising_regu,~] = Var_Alignment_comp_prefilter(input,method,nr_iter ,Fs,'regu');
+[Reg_aniso,V_aniso, initial_denoising_aniso,initial_al] = Var_Alignment_comp_prefilter(input,method,nr_iter ,Fs,'aniso',true);
+[Reg_aspr,V_aspr, initial_denoising_aspr,~] = Var_Alignment_comp_prefilter(input,method,nr_iter ,Fs,'aspr',true);
+[Reg_diffusion,V_diffusion,initial_denoising_diffusion,~] = Var_Alignment_comp_prefilter(input,method,nr_iter ,Fs,'diffusion',true);
+[Reg_donoho,V_donoho, initial_denoising_donoho,~] = Var_Alignment_comp_prefilter(input,method,nr_iter ,Fs,'wavelet',true);
+[Reg_BM3D,V_BM3D, initial_denoising_BM3D,~] = Var_Alignment_comp_prefilter(input,method,nr_iter ,Fs,'BM3D',true);
+[Reg_nlm,V_nlm, initial_denoising_nlm,~] = Var_Alignment_comp_prefilter(input,method,nr_iter ,Fs,'nlm',true);
+[Reg_regu,V_regu, initial_denoising_regu,~] = Var_Alignment_comp_prefilter(input,method,nr_iter ,Fs,'regu',true);
 
 
 
