@@ -34,35 +34,35 @@ xticks = linspace(1, size(time, 2), numel(xticklabels));
 
 
 %% influence on iterative refinement
-[Reg_aniso_1,V_aniso_1, initial_denoising_aniso,~] = Var_Alignment_comp_prefilter(input,method,1 ,Fs,'aniso',false);
-[Reg_aniso_5,V_aniso_5, ~,~] = Var_Alignment_comp_prefilter(input,method,5 ,Fs,'aniso',false);
+[Reg_aniso_1,V_aniso_1, initial_denoising_aniso,~] = Var_Alignment_comp_prefilter(input,method,1 ,Fs,'aniso',false,false);
+[Reg_aniso_5,V_aniso_5, ~,~] = Var_Alignment_comp_prefilter(input,method,5 ,Fs,'aniso',false,false);
 
-[Reg_BM3D_1,V_BM3D_1, initial_denoising_BM3D,initial_al] = Var_Alignment_comp_prefilter(input,method,1 ,Fs,'BM3D',false);
-[Reg_BM3D_5,V_BM3D_5, ~,~] = Var_Alignment_comp_prefilter(input,method,5 ,Fs,'BM3D',false);
+[Reg_BM3D_1,V_BM3D_1, initial_denoising_BM3D,initial_al] = Var_Alignment_comp_prefilter(input,method,1 ,Fs,'BM3D',true,false);
+[Reg_BM3D_5,V_BM3D_5, ~,~] = Var_Alignment_comp_prefilter(input,method,5 ,Fs,'BM3D',true,false);
 
 figure;
 subplot(3,4,1)
 imagesc(input);
 set(gca, 'XTick', xticks, 'XTickLabel', xticklabels);
-xlabel('time [ms]','FontSize', 12);
-ylabel('ERP trials','FontSize', 12)
-title('noisy input')
+xlabel('time [ms]','FontSize', 15);
+ylabel('ERP trials','FontSize', 15)
+title('noisy input','FontSize', 15)
 subplot(3,4,2)
 imagesc(initial_denoising_aniso)
-title('proposed gaussian')
+title('proposed gaussian','FontSize', 15)
 set(gca, 'XTick', xticks, 'XTickLabel', xticklabels);
 subplot(3,4,3)
 imagesc(Reg_aniso_1)
-title('1 iteration');
+title('1 iteration','FontSize', 15);
 set(gca, 'XTick', xticks, 'XTickLabel', xticklabels);
 subplot(3,4,4)
 imagesc(Reg_aniso_5)
-title('5 iterations')
+title('5 iterations','FontSize', 15)
 set(gca, 'XTick', xticks, 'XTickLabel', xticklabels);
 subplot(3,4,6)
 imagesc(initial_denoising_BM3D)
 set(gca, 'XTick', xticks, 'XTickLabel', xticklabels);
-title('BM3D')
+title('BM3D','FontSize', 15)
 set(gca, 'XTick', xticks, 'XTickLabel', xticklabels);
 subplot(3,4,7)
 imagesc(Reg_BM3D_1)
@@ -72,23 +72,25 @@ imagesc(Reg_BM3D_5)
 set(gca, 'XTick', xticks, 'XTickLabel', xticklabels);
 
 subplot(3,4,11);
-plot(time,mean(input));
+plot(time,mean(input),'LineWidth',1);
 hold on;
-plot(time,mean(Reg_aniso_1)),
-plot(time,mean(Reg_aniso_5));
+plot(time,mean(Reg_aniso_1),'LineWidth',1),
+plot(time,mean(Reg_aniso_5),'LineWidth',1);
 xlim([time(1) time(end)])
 grid on;
-title('change in mean signal: BM3D')
-legend('input','1 Iteration','5 Iterations','Location','NW');
+title('Mean signal: BM3D','FontSize', 15)
+xlabel('time [ms]','FontSize',15)
+legend('input','1 Iteration','5 Iterations','Location','NW','FontSize', 10);
 
 subplot(3,4,12);
-plot(time,mean(input));
+plot(time,mean(input),'LineWidth',1);
 hold on;
-plot(time,mean(Reg_BM3D_1)),
-plot(time,mean(Reg_BM3D_5));
+plot(time,mean(Reg_BM3D_1),'LineWidth',1),
+plot(time,mean(Reg_BM3D_5),'LineWidth',1);
 xlim([time(1) time(end)])
 grid on;
-title('change in mean signal: gaussian')
-legend('input','1 Iteration','5 Iterations','Location','NW');
+title('Mean signal: gaussian','FontSize', 15)
+xlabel('time [ms]','FontSize',15)
+legend('input','1 Iteration','5 Iterations','Location','NW','FontSize', 10);
 
 
