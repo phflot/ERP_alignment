@@ -1,4 +1,4 @@
-function [Reg,V,initial_denoising, initial_al] = Var_Alignment_comp_prefilter(inputImage,method,iter_ref,Fs,denoising,plot_results)
+function [Reg,V,initial_denoising, initial_al] = Var_Alignment_comp_prefilter(inputImage,method,iter_ref,Fs,denoising,half_filter,plot_results)
 % Author: David Thinnes
 % date:  04/22/2022
 % Copyright 2022 by David Thinnes, All rights reserved.
@@ -71,7 +71,7 @@ it_i = 60;
 a_i = 0.7;
 as_i = 0.5;
 
-s_r = 5;
+s_r = 10;
 it_r = 20;
 a_r = 0.7;
 as_r = 0.5;
@@ -81,7 +81,11 @@ as_r = 0.5;
 switch denoising
     case 'aniso'
         % filter with anisotropic gaussian
+        if half_filter == true
+        [reg_filt, ~] = imgaussfiltaniso( inputImage, 4, 16, true);
+        else
         [reg_filt, ~] = imgaussfiltaniso( inputImage, 4);
+        end
     case 'aspr'
         % filter with amplitude and phase regularization
         reg_filt = ASPRdenoising(inputImage);
@@ -148,7 +152,7 @@ for tt = 1:iter_ref
     % select the denoising filter
     switch denoising
         case 'aniso'
-            [reg_filt, ~] = imgaussfiltaniso( registered, 5, 15, true);
+            [reg_filt, ~] = imgaussfiltaniso( registered, 4, 16, true);
         case 'ASPR'
             reg_filt = ASPRdenoising(registered);
         case 'diffusion'
