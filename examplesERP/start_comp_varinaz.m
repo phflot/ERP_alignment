@@ -2,7 +2,6 @@
 % date:  04/22/2022
 % Copyright 2022 by David Thinnes, All rights reserved.
 
-% compare differnet prefilter algorithms with PSNR method
 %% set path
 clear
 close all
@@ -35,7 +34,7 @@ xticks = linspace(1, size(time, 2), numel(xticklabels));
 ROI1 = 250;
 ROI2 = 400;
 %% influence on iterative refinement
-[Reg_BM3D_1,V_BM3D_1, initial_denoising_BM3D,initial_al] = Var_Alignment_comp_prefilter(input,method,1 ,Fs,'BM3D',false);
+[Reg_BM3D_1,V_BM3D_1, initial_denoising_BM3D,initial_al] = Var_Alignment_comp_prefilter(input,method,1 ,Fs,'BM3D',false,false);
 
 Dis = squeeze(mean(V_BM3D_1(:, find(single(time) == ROI1):find(single(time) == ROI2) ), 2));
 Dis_ms = Dis*5;
