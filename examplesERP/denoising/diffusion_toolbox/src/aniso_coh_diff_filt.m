@@ -121,7 +121,7 @@ end
 function [a, b, c] = get_diff_tensor(img, sigma, C, alpha, rho)
     global use_gpu;
     [dx, dy] = gradient(imgaussfilt(img, sigma));
-%     dy = dy * 0.15;
+    dy = dy * 0.15;
 
     [m, n, ~] = size(img);
     
