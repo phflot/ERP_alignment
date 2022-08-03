@@ -80,6 +80,7 @@ xlim([time(1) time(end)])
 grid on;
 title('Mean signal: BM3D','FontSize', 15)
 xlabel('time [ms]','FontSize',15)
+ylim([-1 1.5]);
 legend('input','1 Iteration','5 Iterations','Location','NW','FontSize', 10);
 
 subplot(3,4,12);
@@ -91,6 +92,7 @@ xlim([time(1) time(end)])
 grid on;
 title('Mean signal: gaussian','FontSize', 15)
 xlabel('time [ms]','FontSize',15)
+ylim([-1 1.5]);
 legend('input','1 Iteration','5 Iterations','Location','NW','FontSize', 10);
 
 
