@@ -22,7 +22,6 @@ num_frex = 30;
 % other wavelet parameters
 frequencies = logspace(log10(min_freq),log10(max_freq),num_frex);
 time = 0:1/EEG.srate:0.7;
-time = time(1:end-1);
 half_of_wavelet_size = (length(time)-1)/2;
 
 % FFT parameters (use next-power-of-2)
