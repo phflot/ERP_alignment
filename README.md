@@ -16,7 +16,7 @@ The Code can be compiled and installed with the ```set_path.m``` file.
 
 ## Citation
 
-If you use this work in the context of EP and ERP analysis, please additionally cite
+If you use this work in the context of EP and ERP analysis, please cite
 
 > D. Thinnes, P. Flotho, F. I. Corona-Strauss, D. J. Strauss and J. F. Vibell, “Compensation of P300 Latency Jitter using fast variational 1D Displacement Estimation” (in preparation), 2020. 
 
