@@ -30,7 +30,7 @@ BibTeX entry
 }
 ```
 
-If you use this code for your other work, please additionally cite
+If you use this code for other work, please additionally cite
   
 > Flotho, P., Thinnes, D., Kuhn, B., Roome, C. J., Vibell, J. F., & Strauss, D. J. (2021). Fast variational alignment of non-flat 1D displacements for applications in neuroimaging. Journal of Neuroscience Methods, 353, 109076.
 
