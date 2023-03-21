@@ -100,7 +100,7 @@ https://webpages.tuni.fi/foi/GCF-BM3D
 
 Reference
 ```
-@Article{Dabov2007,
+@article{Dabov2007,
   author  = {Dabov, K. and Foi, A. and Katkovnik, V. and Egiazarian, K.},
   journal = {IEEE Trans Image Process},
   title   = {Image Denoising by Sparse 3-D Transform-Domain Collaborative Filtering},
@@ -112,11 +112,11 @@ Reference
 ```
 
 ## Anisotropic phase-map denoising
-If you use the BM3D functions in this repository for your work, please cite
+If you use the Anisotropic phase-map denoising function in this repository for your work, please cite
 
 Reference
 ```
-@Article{Villa2010,
+@article{Villa2010,
   author   = {Villa, J. and Rodriguez-Vera,R. and Quiroga,J. A. and de la Rosa, I. and González,E.},
   journal  = {Opt Lasers Eng},
   title    = {Anisotropic phase-map denoising using a regularized cost-function with complex-valued Markov-random-fields},
