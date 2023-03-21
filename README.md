@@ -1,4 +1,4 @@
-# Toolbox for fast, variational 1D ERP alignment
+# Toolbox for fast, variational 1D ERP alignment (VERPA)
 
 The code is written in Matlab and C++
 
