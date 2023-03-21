@@ -69,6 +69,7 @@ The file ```demo.m``` demonstrates the usage of the functions.
 ## ASPR ERP Image Denoising
 if you use ASPR image denoising for your work, please cite 
 
+Reference
 ```
 @article{kohl19,
   author  = {Kohl, M. and Schebsdat, E. and Schneider, E. and Strauss, D. J.},
@@ -87,7 +88,7 @@ Download
 $ git clone https://gitlab.com/manuelchristophkohl/aspr-erp-image-denoising.git
 ```
 
-If you use the BM3D functions in this repository for your work, please additionally cite
+If you use the BM3D functions in this repository for your work, please cite
 
 ## BM3D demo software for image/video restoration and enhancement  
 Public release v1.9 (26 August 2011) 
@@ -107,5 +108,23 @@ Reference
   pages   = {2080-95},
   volume  = {16},
   doi     = {10.1109/TIP.2007.901238},
+}
+```
+
+## Anisotropic phase-map denoising
+If you use the BM3D functions in this repository for your work, please cite
+
+Reference
+```
+@Article{Villa2010,
+  author   = {Villa, J. and Rodriguez-Vera,R. and Quiroga,J. A. and de la Rosa, I. and González,E.},
+  journal  = {Opt Lasers Eng},
+  title    = {Anisotropic phase-map denoising using a regularized cost-function with complex-valued Markov-random-fields},
+  year     = {2010},
+  pages    = {650-56},
+  volume   = {48},
+  doi      = {https://doi.org/10.1016/j.optlaseng.2010.02.002},
+  keywords = {Regularization, Phase-map filtering},
+  url      = {http://www.sciencedirect.com/science/article/pii/S0143816610000242},
 }
 ```
