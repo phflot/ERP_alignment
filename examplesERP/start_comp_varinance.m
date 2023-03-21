@@ -7,7 +7,7 @@ clear
 close all
 clc
 
-run('set_path_functionsERP');
+run('set_path_functions');
 load('ERPexample');
 
 % generate synthetic ERP matrix
@@ -34,7 +34,7 @@ xticks = linspace(1, size(time, 2), numel(xticklabels));
 ROI1 = 250;
 ROI2 = 400;
 %% influence on iterative refinement
-[Reg_BM3D_1,V_BM3D_1, initial_denoising_BM3D,initial_al] = Var_Alignment_comp_prefilter(input,method,1 ,Fs,'BM3D',false,false);
+[Reg_BM3D_1,V_BM3D_1, initial_denoising_BM3D,initial_al] = Var_Alignment(input,method,1 ,Fs,'aniso',false,false);
 
 Dis = squeeze(mean(V_BM3D_1(:, find(single(time) == ROI1):find(single(time) == ROI2) ), 2));
 Dis_ms = Dis*5;

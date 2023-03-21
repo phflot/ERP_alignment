@@ -2,7 +2,7 @@
 % Author   : Philipp Flotho
 
 function [img, v_ref, reference, groundTruthMap] = generate_synth_ERP(rng_idx, v_ref)
-    run('../set_path.m');
+%     run('../set_path.m');
 
     load('ERPexample.mat', 'ERPexample');
     ERPexample = [zeros(200,20),ERPexample];
@@ -30,7 +30,7 @@ function [img, v_ref, reference, groundTruthMap] = generate_synth_ERP(rng_idx, v
         v_ref = zeros(size(img));
         
         % global displacements: 
-        max_disp = 1;
+        max_disp = 2.5;
         v_ref = zeros(size(img));
         prev_rand = 0;
         for i = 1:n_trials
@@ -42,7 +42,7 @@ function [img, v_ref, reference, groundTruthMap] = generate_synth_ERP(rng_idx, v
         
         % local displacements
         for i = 1:n_trials
-            v_ref(i, idx(1)-10:idx(1)+ 10) = v_ref(i, 1) + normrnd(0, 0.5);
+            v_ref(i, idx(1)-10:idx(1)+ 10) = v_ref(i, 1) + normrnd(0, 1);
             v_ref(i, idx(2)-15:idx(2)+ 15) = v_ref(i, 1) + normrnd(0, 2);
         end
         v_ref = imgaussfilt2(v_ref, [0, 5]);
