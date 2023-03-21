@@ -54,7 +54,8 @@ BibTeX entry
 ## Denoising algorithms
 If you use nonlinear, anisotropic diffusion for your work, please cite
 
-# Toolbox for nonlinear, anisotropic diffusion on the GPU
+```
+## Toolbox for nonlinear, anisotropic diffusion on the GPU
 Fast and fully vectorized MATLAB implementation of non-linear, anisotropic diffusion with gpuarray and RGB image support. 
 Implemented diffusion types are edge enhancing and coherence enhancing diffusion (Weickert, 1999) as well as Perona-Malik non-linear isotropic diffusion with different diffusivities. 
 
@@ -78,7 +79,7 @@ $ git clone https://gitlab.com/manuelchristophkohl/aspr-erp-image-denoising.git
 ```
 If you use the BM3D functions in this repository for your work, please additionally cite
 ```
-# BM3D demo software for image/video restoration and enhancement  
+## BM3D demo software for image/video restoration and enhancement  
 Public release v1.9 (26 August 2011) 
 
 Download
