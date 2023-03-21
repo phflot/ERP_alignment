@@ -69,6 +69,17 @@ The file ```demo.m``` demonstrates the usage of the functions.
 ## ASPR ERP Image Denoising
 if you use ASPR image denoising for your work, please cite 
 
+```
+@article{kohl19,
+  author  = {Kohl, M. and Schebsdat, E. and Schneider, E. and Strauss, D. J.},
+  journal = {Conference proceedings: 2019 9th International IEEE/EMBS Conference on Neural Engineering (NER)},
+  title   = {Denoising of Single-Trial Event-Related Potentials by Shrinkage and Phase Regularization of Analytic Wavelet Filterbank Coefficients},
+  year    = {2019},
+  pages   = {251-54},
+  doi     = {10.1109/NER.2019.8717148},
+}
+```
+
 This repository provides a self-contained MATLAB implementation of an algorithm for the fast denoising of single-trial event-related 
 
 Download
@@ -88,7 +99,13 @@ https://webpages.tuni.fi/foi/GCF-BM3D
 
 Reference
 ```
-K. Dabov, A. Foi, V. Katkovnik, and K. Egiazarian, "Image 
-denoising by sparse 3D transform-domain collaborative filtering," 
-IEEE Trans. Image Process., vol. 16, no. 8, August 2007.
+@Article{Dabov2007,
+  author  = {Dabov, K. and Foi, A. and Katkovnik, V. and Egiazarian, K.},
+  journal = {IEEE Trans Image Process},
+  title   = {Image Denoising by Sparse 3-D Transform-Domain Collaborative Filtering},
+  year    = {2007},
+  pages   = {2080-95},
+  volume  = {16},
+  doi     = {10.1109/TIP.2007.901238},
+}
 ```
