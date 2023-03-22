@@ -1,5 +1,5 @@
 % Author: David Thinnes
-% date:  03/03/2023
+% date:  03/22/2023
 % Copyright 2022 by David Thinnes, All rights reserved.
 
 %% compare differnet references (mean, woody thornton)
@@ -87,7 +87,7 @@ legend({'conventional','mean','woody','thornton'},'location','nw');
 
 
 figure;
-subplot(1,2,1)
+subplot(1,3,1)
 imagesc(synth_ERP)
 title('Synthetic ERP with jitter','FontSize',15);
 ylabel('ERP trials','FontSize',15);
@@ -96,13 +96,13 @@ xlabel('time [ms]','FontSize',15);
 % xticks = linspace(1, size(time, 2), numel(xticklabels));
 set(gca, 'XTick', xticks, 'XTickLabel', xticklabels);
 
-subplot(1,2,2)
+subplot(1,3,2)
 plot(time,reference,':','color','k','LineWidth',2);
 hold on;
-plot(time,mean(input),'color','b','LineWidth',2);
-plot(time,mean(Reg_mean),'color','g','LineWidth',2);
-plot(time,ref_woody,'color','k','LineWidth',2);
-plot(time,ref_thornton,'color','r','LineWidth',2);
+plot(time,mean(input),'color','b','LineWidth',1);
+plot(time,mean(Reg_mean),'color','g','LineWidth',1);
+plot(time,ref_woody,'color','k','LineWidth',1);
+plot(time,ref_thornton,'color','r','LineWidth',1);
 title('Cross-Correlation VS VM Alignment','FontSize',15);
 ylabel('norm. amplitude','FontSize',15);
 xlabel('time [ms]','FontSize',15);
@@ -111,14 +111,16 @@ legend({'GroundTruth','conventional','our method','woody','thornton'},'location'
 
 
 %% Align SNR
-figure;
-
+% figure;
+subplot(1,3,3)
 reg_mean_align = align_CC(mean(Reg_mean, 1), reference);
 reg_thorn_align = align_CC(ref_thornton, reference);
 reg_woody_align = align_CC(ref_woody, reference);
 input_mean_align = align_CC(mean(input, 1), reference);
 
 ref = reference(:, 15:end-15);
+time_al = time(15:end-15);
+
 
 disp(psnr(input_mean_align, ref))
 disp(psnr(reg_woody_align, ref))
@@ -127,15 +129,17 @@ disp(psnr(reg_mean_align, ref))
 
 
 hold on
-plot(ref,':','color','k','LineWidth',1);
-plot(input_mean_align,'color','b','LineWidth',1);
-plot(reg_mean_align,'color','g','LineWidth',1);
-plot(reg_woody_align,'color','k','LineWidth',1);
-plot(reg_thorn_align,'color','r','LineWidth',1);
+plot(time_al,ref,':','color','k','LineWidth',2);
+plot(time_al,input_mean_align,'color','b','LineWidth',1);
+plot(time_al,reg_mean_align,'color','g','LineWidth',1);
+plot(time_al,reg_woody_align,'color','k','LineWidth',1);
+plot(time_al,reg_thorn_align,'color','r','LineWidth',1);
+grid on;
 
 title('SNR Alignment','FontSize',15);
 grid on;
 legend({'GroundTruth','conventional','our method','woody','thornton'},'location','nw');
+xlabel('time [ms]','FontSize',15);
 
 function f = align_CC(f, ref)
     [R, lag] = xcorr(f, ref);
