@@ -1,7 +1,7 @@
 function [Reg,V,initial_denoising, initial_al] = Var_Alignment(inputImage,method,iter_ref,Fs,denoising,half_filter,plot_results)
 % Author: David Thinnes
-% date:  04/22/2022
-% Copyright 2022 by David Thinnes, All rights reserved.
+% date:  03/27/2023
+% Copyright 2023 by David Thinnes, All rights reserved.
 
 % description:
 % the function corrects the latency shift of evoked potentials by choosing a stable
@@ -65,10 +65,6 @@ switch method
         ref = mean(inputImage); % default
 end
 
-
-
-%% 1 dimensional displacement estimation, Flotho & Thinnes, 2020
-% select the denoising filter
 
 
 %% define parameters for the alignment program
@@ -186,7 +182,6 @@ plot(time,mean(inputImage),'LineWidth', 2);
 mean_tmp = mean(tmp, 1, 'omitnan');
 plot(time,mean_tmp,'LineWidth', 2);
 legend('ROI','Pre-Alignment','Post-Alignment','Location','NW');
-xlim([time(1) time(end)]);
 xlabel('time [ms]','FontSize', 15)
 grid on;
 hold off;
@@ -207,6 +202,8 @@ end
 clear w v registered
 end
 
+
+% select the denoising filter
 function  reg_filt = denoise(denoising, inputImage, sigma, half_filter)
 if nargin < 4
     half_filter = false;

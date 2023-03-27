@@ -1,7 +1,7 @@
-function [Reg,V] = Var_Alignment(inputImage,method,iter_ref,Fs)
+function [Reg,V] = Var_Alignment_constant(inputImage,method,iter_ref,Fs)
 % Author: David Thinnes
-% date:  03/03/2023
-% Copyright 2020 by David Thinnes, All rights reserved.
+% date:  03/27/2023
+% Copyright 2023 by David Thinnes, All rights reserved.
 
 % description:
 % the function corrects the latency shift of evoked potentials by choosing a stable
@@ -72,7 +72,6 @@ a_r = 0.4;
 as_r = 0.5;
 
 %% 1 dimensional displacement estimation, Philipp Flotho 2020
-
 % initial alignment to get the reference (select stable reference measurements):
 [~, v] = align_lines(...
     inputImage, ...
@@ -119,7 +118,7 @@ elapsedtime = toc;
 fprintf(['Elapsed Time Alignment =' num2str(elapsedtime) 'sec \n']);
 
 %% Plot the results
-xticklabels = time(1):100:600;
+xticklabels = time(1):100:500;
 
 ROI1 = 250;
 ROI2 = 400;
@@ -150,7 +149,6 @@ plot(time,mean(inputImage),'LineWidth', 2);
 mean_tmp = mean(tmp, 1, 'omitnan');
 plot(time,mean_tmp,'LineWidth', 2);
 legend('ROI','Pre-Alignment','Post-Alignment','Location','NW');
-xlim([time(1) time(end)]);
 xlabel('time [ms]','FontSize', 15)
 grid on;
 hold off;
