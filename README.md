@@ -128,3 +128,7 @@ Reference
   url      = {http://www.sciencedirect.com/science/article/pii/S0143816610000242},
 }
 ```
+
+## Woody and thornton average by
+Ikaro Silva (2023). Woody Average (Average with alignment)
+(https://www.mathworks.com/matlabcentral/fileexchange/12459-woody-average-average-with-alignment), MATLAB Central File Exchange
