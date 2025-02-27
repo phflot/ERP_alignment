@@ -18,7 +18,7 @@ The Code can be compiled and installed with the ```set_path.m``` file.
 
 If you use this work in the context of EP and ERP analysis, please cite
 
-> D. Thinnes, P. Flotho, F. I. Corona-Strauss, D. J. Strauss and J. F. Vibell, “Compensation of ERP Latency Jitter using fast variational 1D Displacement Estimation” (in preparation), 2023. 
+> D. Thinnes, P. Flotho, F. I. Corona-Strauss, D. J. Strauss and J. F. Vibell, “Compensation of ERP Latency Jitter using fast variational 1D Displacement Estimation” (preprint), 2025. 
 
 BibTeX entry
 ```
