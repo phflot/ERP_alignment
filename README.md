@@ -26,7 +26,7 @@ BibTeX entry
     author = {Thinnes, D. and Flotho, P. and Corona-Strauss, F. I. and Strauss, D. J. and Vibell, J. F.},
     title = {Compensation of ERP Latency Jitter using fast variational 1D Displacement Estimation},
     journal = {(TechRxiv)},
-    year = {2025}
+    year = {2025},
     doi = {10.36227/techrxiv.174062901.13096882/v1}
 }
 ```
