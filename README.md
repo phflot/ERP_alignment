@@ -22,7 +22,7 @@ If you use this work in the context of EP and ERP analysis, please cite
 
 BibTeX entry
 ```
-@article{thinn23,
+@article{thinn25,
     author = {Thinnes, D. and Flotho, P. and Corona-Strauss, F. I. and Strauss, D. J. and Vibell, J. F.},
     title = {Compensation of ERP Latency Jitter using fast variational 1D Displacement Estimation},
     journal = {(TechRxiv)},
