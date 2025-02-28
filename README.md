@@ -1,6 +1,6 @@
 # Toolbox for fast, variational 1D ERP alignment (VERPA)
 
-The code is written in Matlab and C++. The alignment code is based on this [repository](https://github.com/phflot/variational_aligner) and the project website can be found [here](https://phflot.github.io/variational_aligner/).
+The code is written in Matlab and C++. The alignment code is based on this [repository](https://github.com/phflot/variational_aligner) and the project website can be found [here](https://www.snnu.uni-saarland.de/variational_alignment/).
 
 ## Download
 
